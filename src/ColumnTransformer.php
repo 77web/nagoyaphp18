@@ -16,7 +16,7 @@ class ColumnTransformer
             $codes[] = $square->isBlock() ? 1 : 0;
         }
 
-        return str_pad(base_convert(implode('', array_reverse($codes)), 2, 16), 2, '0');
+        return sprintf('%02s', base_convert(implode('', array_reverse($codes)), 2, 16));
     }
 
     /**
@@ -26,7 +26,7 @@ class ColumnTransformer
      */
     public function reverseTransform(int $x, string $colString): SquareCollection
     {
-        $codes = sprintf('%08d', base_convert($colString, 16, 2));
+        $codes = sprintf('%08s', base_convert($colString, 16, 2));
         $squares = [];
         foreach (str_split($codes) as $index => $code) {
             $squares[(8-$index)] = $code == 1 ? new Block($x, $index) : new EmptySquare($x, $index);
