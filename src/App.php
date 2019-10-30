@@ -56,7 +56,7 @@ class App
 
         // 上に積む
         for ($i = $newRowIndex; $i >=0; $i--) {
-            foreach ($this->getEmptyRow($i, $sizeOfRow) as $square) {
+            foreach ($this->getEmptyRow($i, $sizeOfRow)->getSquares() as $square) {
                 $afterField->addSquare($square);
             }
         }
