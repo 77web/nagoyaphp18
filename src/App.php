@@ -36,7 +36,6 @@ class App
                 $initialField->addSquare($square);
             }
         }
-
         // 下〜上
         $rows = $initialField->getRows();
         $sizeOfRow = count($rows[0]->getSquares());
@@ -60,7 +59,6 @@ class App
                 $afterField->addSquare($square);
             }
         }
-
         return $this->outputFormatter->format($afterField);
     }
 
