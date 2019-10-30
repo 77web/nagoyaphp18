@@ -16,7 +16,7 @@ class ColumnTransformer
             $codes[] = $square->isBlock() ? 1 : 0;
         }
 
-        return sprintf('%02s', base_convert(implode('', array_reverse($codes)), 2, 16));
+        return sprintf('%02s', base_convert(implode('', $codes), 2, 16));
     }
 
     /**
