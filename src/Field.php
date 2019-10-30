@@ -19,9 +19,9 @@ class Field
 
     /**
      * @param int $y
-     * @return SquareInterface[]
+     * @return SquareCollection
      */
-    public function getRow(int $y): array
+    public function getRow(int $y): SquareCollection
     {
         $row = [];
         foreach ($this->squares as $square) {
@@ -32,6 +32,6 @@ class Field
 
         ksort($row);
 
-        return $row;
+        return new SquareCollection($row);
     }
 }
