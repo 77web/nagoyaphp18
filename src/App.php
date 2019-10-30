@@ -55,14 +55,14 @@ class App
 
         // 上に積む
         for ($i = $newRowIndex; $i >=0; $i--) {
-            foreach ($this->getEmptyRow($i, $sizeOfRow)->getSquares() as $square) {
+            foreach ($this->createEmptyRow($i, $sizeOfRow)->getSquares() as $square) {
                 $afterField->addSquare($square);
             }
         }
         return $this->outputFormatter->format($afterField);
     }
 
-    private function getEmptyRow(int $y, int $size)
+    private function createEmptyRow(int $y, int $size)
     {
         $squares = [];
         for ($x = 0; $x < $size; $x++) {
