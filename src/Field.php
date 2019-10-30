@@ -62,11 +62,11 @@ class Field
             $rows[$square->getY()][$square->getX()] = $square;
         }
 
-        $rows = array_map(function ($row) {
-            return new SquareCollection($row);
-        }, $rows);
-
         krsort($rows);
+
+        foreach ($rows as $y => $row) {
+            $rows[$y] = new SquareCollection($row);
+        }
 
         return $rows;
     }
@@ -84,11 +84,11 @@ class Field
             $rows[$square->getX()][$square->getY()] = $square;
         }
 
-        $rows = array_map(function ($row) {
-            return new SquareCollection($row);
-        }, $rows);
-
         ksort($rows);
+
+        foreach ($rows as $x => $row) {
+            $rows[$x] = new SquareCollection($row);
+        }
 
         return $rows;
     }
