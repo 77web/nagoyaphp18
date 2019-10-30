@@ -30,8 +30,6 @@ class Field
             }
         }
 
-        ksort($row);
-
         return new SquareCollection($row);
     }
 
@@ -48,8 +46,6 @@ class Field
             }
         }
 
-        ksort($row);
-
         return new SquareCollection($row);
     }
 
@@ -65,8 +61,6 @@ class Field
         }
 
         $rows = array_map(function ($row) {
-            ksort($row);
-
             return new SquareCollection($row);
         }, $rows);
         ksort($rows);

@@ -18,6 +18,7 @@ class SquareCollection
      */
     public function __construct(array $squares)
     {
+        ksort($squares);
         $this->squares = $squares;
     }
 
