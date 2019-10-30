@@ -50,7 +50,7 @@ class Field
     }
 
     /**
-     * 上の行〜下の行の順
+     * 下の行〜上の行の順
      *
      * @return SquareCollection[]
      */
@@ -60,6 +60,28 @@ class Field
 
         foreach ($this->squares as $square) {
             $rows[$square->getY()][$square->getX()] = $square;
+        }
+
+        $rows = array_map(function ($row) {
+            return new SquareCollection($row);
+        }, $rows);
+
+        krsort($rows);
+
+        return $rows;
+    }
+
+    /**
+     * 左の列〜右の列の順
+     *
+     * @return SquareCollection[]
+     */
+    public function getCols(): array
+    {
+        $rows = [];
+
+        foreach ($this->squares as $square) {
+            $rows[$square->getX()][$square->getY()] = $square;
         }
 
         $rows = array_map(function ($row) {

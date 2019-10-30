@@ -17,6 +17,16 @@ class AbstractSquare
     private $y;
 
     /**
+     * @param int $x
+     * @param int $y
+     */
+    public function __construct(int $x, int $y)
+    {
+        $this->x = $x;
+        $this->y = $y;
+    }
+
+    /**
      * @return int
      */
     public function getX(): int
@@ -35,12 +45,9 @@ class AbstractSquare
     /**
      *
      * @param int $y
-     * @return self
      */
-    public function setY($y): self
+    public function setY(int $y): void
     {
         $this->y = $y;
-
-        return $this;
     }
 }

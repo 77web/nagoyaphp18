@@ -16,7 +16,6 @@ interface SquareInterface
      *
      * 列は変わることがないが行は変わることがある
      * @param int $y
-     * @return self
      */
-    public function setY(int $y): self;
+    public function setY(int $y): void;
 }
