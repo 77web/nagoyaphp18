@@ -24,8 +24,8 @@ class AppTest extends TestCase
     public function provideData()
     {
         return [
-            ['ff-2f-23-f3-77-7f-3b', '1f-03-00-1c-0d-0f-06'],
             ['01', '00'],
+            ['ff-2f-23-f3-77-7f-3b', '1f-03-00-1c-0d-0f-06'],
             ['00', '00'],
             ['7a-4e', '0c-02'],
             ['56-b6', '08-14'],
