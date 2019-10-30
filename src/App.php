@@ -15,12 +15,19 @@ class App
             }
         }
 
+        // 上〜下
+        $rows = $initialField->getRows();
+
         $afterField = new Field();
-        foreach ($initialField->getRows() as $row) {
+        $newRowIndex = 0;
+        foreach ($rows as $row) {
             if (!$row->isFilledWithBlock()) {
-                foreach ($row as $square) {
+                foreach ($row->getSquares() as $square) {
+                    $square->setY($newRowIndex);
                     $afterField->addSquare($square);
                 }
+                
+                $newRowIndex++;
             }
         }
 

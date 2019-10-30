@@ -11,4 +11,12 @@ interface SquareInterface
     public function getX(): int;
 
     public function getY(): int;
+
+    /**
+     *
+     * 列は変わることがないが行は変わることがある
+     * @param int $y
+     * @return self
+     */
+    public function setY(int $y): self;
 }

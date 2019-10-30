@@ -50,6 +50,8 @@ class Field
     }
 
     /**
+     * 上の行〜下の行の順
+     *
      * @return SquareCollection[]
      */
     public function getRows(): array
@@ -63,6 +65,7 @@ class Field
         $rows = array_map(function ($row) {
             return new SquareCollection($row);
         }, $rows);
+
         ksort($rows);
 
         return $rows;

@@ -31,4 +31,16 @@ class AbstractSquare
     {
         return $this->y;
     }
+
+    /**
+     *
+     * @param int $y
+     * @return self
+     */
+    public function setY($y): self
+    {
+        $this->y = $y;
+
+        return $this;
+    }
 }
